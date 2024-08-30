@@ -67,3 +67,7 @@
 ## Schéma d'une BDD
 
 Le `schéma` d'une BDD est une représentation de la structure logique des données, incluant les tables, les colonnes, les relations entre les tables, et les contraintes. Il définit comment les données sont organisées, interconnectés, et gérées pour assurer leur cohérence et intégrité.
+
+
+## Quelques annotations 
+`@Table`:  L'annotation `@ Table` vous permet de spécifier les détails de la table qui seront utilisés pour conserver l'entité dans la base de données.

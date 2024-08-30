@@ -2,10 +2,13 @@ package bj.highfiveuniversity.e_commerce.models;
 
 import java.time.LocalDateTime;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,7 +26,7 @@ import lombok.NoArgsConstructor;
 // @EqualsAndHashCode
 // @RequiredArgsConstructor
 @Builder
-@Data //@Setter @Getter @ToString @EqualsAndHashCode @RequiredArgsConstructor 
+@Data // @Setter @Getter @ToString @EqualsAndHashCode @RequiredArgsConstructor
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
@@ -39,11 +42,13 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable =false )
+    @Column(nullable = false)
     private String password;
-    
+
     private LocalDateTime createdAt;
     private LocalDateTime updateAt;
-   
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
 }
